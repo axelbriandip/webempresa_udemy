@@ -5,6 +5,9 @@ urlpatterns = [
     # Paths de core
     path('', include('core.urls')),
 
+    # Paths of services
+    path('', include('services.urls')),
+
     # Paths de admin
     path('admin/', admin.site.urls),
 ]
