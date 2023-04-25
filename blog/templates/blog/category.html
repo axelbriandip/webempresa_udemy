@@ -2,7 +2,9 @@
 {% block title %}Blog{% endblock %}
 {% load static %}
 {% block content %}
-    {% for post in posts %}
+    {% comment %} forma rudimentaria de filtrar {% endcomment %}
+    {% comment %} {% for post in posts_filtered %} {% endcomment %}
+    {% for post in category.get_posts.all %} {% comment %} 'get_posts' fue agregado en el modelo 'Post' {% endcomment %}
         <section class="page-section cta">
             <div class="container">
             <div class="row">
