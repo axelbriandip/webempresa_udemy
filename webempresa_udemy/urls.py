@@ -5,10 +5,10 @@ from django.conf import settings
 urlpatterns = [
     # Paths de core
     path('', include('core.urls')),
-
     # Paths of services
-    path('', include('services.urls')),
-
+    path('services/', include('services.urls')),
+    # Paths of blog
+    path('blog/', include('blog.urls')),
     # Paths de admin
     path('admin/', admin.site.urls),
 ]
