@@ -12,7 +12,7 @@
                     <span class="section-heading-lower">{{page.title}}</span>
                 </h2>
                 <div class="section-content">
-                    {{page.content}}
+                    {{page.content|safe}}
                 </div>
                     {% if user.is_authenticated %}
                         {% comment %} <a href="{% url 'admin:App_Model_Action' obj.id %}">Editar contenido</a> {% endcomment %}
