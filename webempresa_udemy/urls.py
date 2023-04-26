@@ -11,6 +11,8 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     # Paths of pages
     path('pages/', include('pages.urls')),
+    # Paths of contact
+    path('contact/', include('contact.urls')),
     # Paths de admin
     path('admin/', admin.site.urls),
 ]
