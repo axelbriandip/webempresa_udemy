@@ -134,3 +134,9 @@ import os
 # media settings
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Email config
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = '7858707da3adcc'
+EMAIL_HOST_PASSWORD = 'd10a7dc942c7da'
+EMAIL_PORT = '2525'
