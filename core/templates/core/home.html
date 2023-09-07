@@ -1,7 +1,13 @@
 {% extends "core/base.html" %}
+
 {% block title %}
 home
 {% endblock title %}
-{% block content %}
-    <h3>Este es el home</h3>
-{% endblock content %}
+
+{% comment %} si o si en uno al lado del otro, sino da un salto de línea (error) {% endcomment %}
+{% block img_bkg %}{% load static %}{% static 'core/img/home-bg.jpg' %}{% endblock img_bkg %}
+
+{% block headers %}
+<h1>Juan Pérez</h1>
+<span class="subheading">Ingeniero Industrial</span>
+{% endblock headers %}
