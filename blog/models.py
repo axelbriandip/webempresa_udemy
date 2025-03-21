@@ -19,6 +19,7 @@ class Category(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=50, verbose_name="título")
     content = models.TextField(verbose_name="contenido")
+    image = models.ImageField(verbose_name="imágen", upload_to="posts", null=True, blank=True)
     published = models.DateTimeField(verbose_name="fecha de publicación", default=now)
     author = models.ForeignKey(User, verbose_name="autor", on_delete=models.CASCADE)
     categories = models.ManyToManyField(Category, verbose_name="categorías")
