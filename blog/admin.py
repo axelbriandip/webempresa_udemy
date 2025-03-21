@@ -7,6 +7,16 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class PostAdmin(admin.ModelAdmin):
     readonly_fields = ['created', 'updated']
+    list_display = ('title', 'author', 'published', 'post_categories')
+    ordering = ('author', 'published')
+    search_fields = ('title',)
+    date_hierarchy = 'published'
+    list_filter = ('author__username', 'categories__name')
+
+    # esto por ser un campo many to many
+    def post_categories(self, obj):
+        return ', '.join(c.name for c in obj.categories.all().order_by('name'))
+    post_categories.short_description = 'categorías'
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Post, PostAdmin)
