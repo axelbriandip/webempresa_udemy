@@ -16,41 +16,35 @@
 
                 <!-- Formulario de contacto -->
                 <form action="" method="POST">
-                  {% csrf_token %}
-                  {% if 'ok' in request.GET %}
-                    <p><b>Su mensaje ha sido enviado con éxito.</b></p>
-                  {% endif %}
-                  <table>
-                    {{form.as_table}}
-                  </table>
-                  <button type="submit">Enviar</button>
-                </form>
-                {% comment %} <form>
+                    {% csrf_token %}
+                    {% if 'ok' in request.GET %}
+                      <p><b>Su mensaje ha sido enviado con éxito.</b></p>
+                    {% endif %}
                     <div class="form-group">
                         <label>Nombre *</label>
                         <div class="input-group">
-                            <input type="text" class="form-control">
+                          {{form.name}}
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Email *</label>
                         <div class="input-group">
-                            <input type="text" class="form-control">
+                          {{form.email}}
                         </div>
-                        <ul class="errorlist">
+                        <!-- <ul class="errorlist">
                             <li>El email no es correcto.</li>
-                        </ul>
+                        </ul> -->
                     </div>
                     <div class="form-group">
                         <label>Mensaje *</label>
                         <div class="input-group">
-                            <textarea class="form-control"></textarea>
+                          {{form.content}}
                         </div>
                     </div>
                     <div class="text-center">
                         <input type="submit" class="btn btn-primary btn-block py-2" value="Enviar">
                     </div>
-                </form> {% endcomment %}
+                </form>
                 <!-- Fin formulario de contacto -->
 
               </div>
