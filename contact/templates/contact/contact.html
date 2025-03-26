@@ -15,7 +15,17 @@
                 </h2>
 
                 <!-- Formulario de contacto -->
-                <form>
+                <form action="" method="POST">
+                  {% csrf_token %}
+                  {% if 'ok' in request.GET %}
+                    <p><b>Su mensaje ha sido enviado con éxito.</b></p>
+                  {% endif %}
+                  <table>
+                    {{form.as_table}}
+                  </table>
+                  <button type="submit">Enviar</button>
+                </form>
+                {% comment %} <form>
                     <div class="form-group">
                         <label>Nombre *</label>
                         <div class="input-group">
@@ -40,7 +50,7 @@
                     <div class="text-center">
                         <input type="submit" class="btn btn-primary btn-block py-2" value="Enviar">
                     </div>
-                </form>
+                </form> {% endcomment %}
                 <!-- Fin formulario de contacto -->
 
               </div>
