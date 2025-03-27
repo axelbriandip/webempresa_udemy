@@ -146,3 +146,12 @@ CKEDITOR_CONFIGS = {
         ]
     }
 }
+
+# send emails
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = 'f7e64210a6894b'
+EMAIL_HOST_PASSWORD = '5f87970bcc286b'
+EMAIL_PORT = '2525'
+
+EMAIL_USE_TLS = True  # Cambia a False si sigue fallando y prueba con EMAIL_USE_SSL=True
+EMAIL_USE_SSL = False
